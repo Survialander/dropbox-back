@@ -18,7 +18,7 @@ const arquivo = new mongoose.Schema(
 });
 
 arquivo.virtual('url').get(function(){ 
-    const url = process.env.URL || 'http://localhost:3333'
+    const url = process.env.URL //|| 'http://localhost:3333'
     
     return `${url}/arquivos/${encodeURIComponent(this.path)}` })
 
