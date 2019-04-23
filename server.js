@@ -28,7 +28,8 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.get('/arquivos', express.static(path.resolve(__dirname, '.', 'tmp')));
+app.use('/arquivos', express.static(path.resolve(__dirname, '.', 'tmp')));
+
 app.use(require('./routes'));    
 
 app.listen(process.env.PORT || 3333, () => {
